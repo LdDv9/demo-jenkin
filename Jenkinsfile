@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('CMD') {
             steps {
-                sh "sh gradle help --scan"
+                sh "gradle help --scan"
             }
         }
         stage('SonarQube analysis') {

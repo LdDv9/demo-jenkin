@@ -1,3 +1,7 @@
+node {
+    'sh gradle help --scan'
+}
+
 pipeline {
     agent any
     stages {

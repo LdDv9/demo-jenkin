@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Clone sources') {
             steps {
-                git branch: 'main' url: 'https://github.com/LdDv9/demo-jenkin.git'
+                git branch: 'main', url: 'https://github.com/LdDv9/demo-jenkin.git'
             }
         }
         stage('pwd') {

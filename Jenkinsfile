@@ -30,11 +30,11 @@ pipeline {
         }
         stage('Build & push docker image') {
             steps {
-                sh '''ID=$(docker build -q -t localhost:8082/repository/docker-nexus .)\
-                    timestamp=$(date +%s)\
-                    echo $ID\
-                    echo ID\
-                    docker tag $ID localhost:8082/repository/docker-nexus:$timestamp\
+                sh '''ID=$(docker build -q -t localhost:8082/repository/docker-nexus .) &&
+                    timestamp=$(date +%s) &&
+                    echo $ID &&
+                    echo ID &&
+                    docker tag $ID localhost:8082/repository/docker-nexus:$timestamp &&
                     docker push localhost:8082/repository/docker-nexus:$timestampsh '''
                 sh "echo DONE!!!"
             }

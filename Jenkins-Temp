@@ -1,0 +1,17 @@
+
+pwd
+
+whoami
+
+/opt/sonar-scanner/bin/sonar-scanner \
+  -Dsonar.projectKey=demo \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://sonarqube:9000 \
+  -Dsonar.login=sqp_bcec6fbf88def678c3b3ffda45ff04e49152b79d
+
+ID=$(docker build -q -t localhost:8082/repository/docker-nexus .)
+timestamp=$(date +%s)
+docker tag $ID localhost:8082/repository/docker-nexus:$timestamp
+docker push localhost:8082/repository/docker-nexus:$timestamp
+
+echo DONE!!!s

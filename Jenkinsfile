@@ -35,7 +35,7 @@ pipeline {
                     echo $ID &&
                     echo ID &&
                     docker tag $ID localhost:8082/repository/docker-nexus:$timestamp &&
-                    docker push localhost:8082/repository/docker-nexus:$timestamps'''
+                    docker push localhost:8082/repository/docker-nexus:$timestamp'''
                 sh "echo DONE!!!"
             }
             
